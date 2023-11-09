@@ -1,0 +1,39 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/about.css">
+    <title>About Us</title>
+</head>
+<body>
+    <header>
+        <img src="/static/images/rook.svg" alt="botPic" class="rook">
+        <div class="nav">
+        <a href="{%url 'index' %}">Home</a>
+        <a href="{% url 'login' %}">Account</a>
+
+        </div>
+    </header>
+    <div class="container">
+        <img src="/static/images/bot3.png" alt="botPic" class="bot">
+            <img src="/static/images/blob.png" alt="botPic" class="blob">
+            <img src="/static/images/blob2.png" alt="botPic" class="blob2">
+        
+        <div class="banner">
+            <p>
+                Tacticle Throne is a Kenyan-based chess competionwebsite that aims to provide a dynamic platform
+                for blitz and classical chess players. The website will offer virtual weekly tournaments, player rankings and seamless Mpesa money transer support
+                with a focus on delivering and engaging user experience and facilitating secure transations. We aim to become the go-to platform for chess enthusiasts in Kenya
+            </p>
+        </div>
+        <div class="data">
+            <h4>Follow us | </h4> <span>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </span>
+        </div>
+    </div>
+</body>
+</html>

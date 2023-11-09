@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Revalia&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Revalia', serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.container .wrapperLeft{
+    min-width: 10%;
+    min-height: 100%;
+    padding: 10px 30px;
+    background: hsla(166, 58%, 82%, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+.wrapperLeft #logo {
+    display: flex;
+    align-items: center;
+}
+
+.wrapperLeft #logo img {
+    width: 40px;
+}
+
+#logoTxt {
+    margin-left: 15px;
+    font-size: 1em;
+}
+
+#menu h4 {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+#menu ol {
+    list-style: none;
+    
+}
+
+ol a {
+    text-decoration: none;
+    color: black;
+}
+
+ol li {
+    padding: 10px 10px;
+    cursor: pointer;
+    transition: .3s ease-out;
+}
+
+ol li .bx {
+    font-size: 20px;
+    padding-right: 10px;
+}
+
+ol li.active, li:hover {
+    background: hsla(166, 82%, 53%, 0.5);
+    border: 1px solid white;
+    border-radius: 5px;
+    outline: none;
+
+}
+
+#btn a {
+    color: black;
+    text-decoration: none;
+    background: white;
+    padding: 10px 70px;
+    border-radius: 5px;
+    transition: .3s ease-out;
+    
+}
+
+#btn a:hover {
+    background: black;
+    color: hsla(166, 58%, 82%, 1);
+}
+
+#metadata {
+    display: flex;
+    position: static;
+    bottom: 0;
+    padding: 0 20px;
+}
+
+#metadata p {
+    font-size: 0.8rem;
+}
+
+.wrapperRight {
+    width: 80%;
+    /* background: rgb(255, 255, 255); */
+    background: url('/static/images/bg.png');
+    color: rgb(0, 0, 0);
+    
+}
+
+
+.settingContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settingDash {
+    background: linear-gradient(  hsla(166, 58%, 82%, 0.5), white);
+    width: 700px;
+    height: 500px;
+    padding: 30px 20px;
+    border-radius: 50px;
+
+}
+
+.settingDash form {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.settingDash form .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.settingDash form .row input {
+    width: 500px;
+    height: 30px;
+    padding: 0 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+
+}
+
+.settingDash form .row button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 40px;
+    margin-right: -155px;
+    border: none;
+    border-radius: 5px;
+    background: black;
+    color: hsla(166, 58%, 82%, 1);;
+    cursor: pointer;
+    transition: .3s ease-out;
+
+}
+
+.settingDash form .row button:hover {
+    transform: scale(1.1);
+}

@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/feedback.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Feedback</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapperLeft">
+            <div id="logo">
+            <img src="/static/images/rook.svg" > <span id="logoTxt"> Tacticle Throne</span>
+            </div>
+            <div id="menu">
+                <h4>Menu</h4>
+                <ol>
+                     <a href="{% url 'userboard' %}"><li><i class='bx bxs-dashboard bx-flashing-hover'></i>Dashboard</li> </a>
+                    <li> <i class='bx bx-list-ol bx-tada-hover'></i>Leaderboard</li>
+                    <li class="active" > <i class='bx bx-message-dots bx-tada-hover'></i>Feedback</li>
+                    <a href="{% url 'settings' %}"><li> <i class='bx bx-cog bx-tada-hover'></i>Settings</li></a>
+                </ol>
+            </div>
+            <div id="btn">
+                <a href="{% url 'index' %}">Logout</a>
+            </div>
+            <div id="metadata">
+                <p>@ copyright 2023</p>
+            </div>
+        </div>
+
+        <div class="wrapperRight">
+            <div class="feedContainer">
+                <div class="feedDash">
+                    <form action="#">
+                    <div class="row">
+                        <span>Name</span> <input type="text">
+                    </div>
+                    <div class="row">
+                        <span>E-mail</span> <input type="email">
+                    </div>
+                    <div class="row">
+                        <span>Subject</span> <input type="text">
+                    </div>
+                    <div class="row">
+                        <span>Feedback</span> <textarea id="feedback" name="feedback" rows="10" cols="47"> </textarea>
+                    </div>
+                    <div class="row" style="display: flex; justify-content: center;">
+                        <button type="submit" >Send</button>
+                    </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

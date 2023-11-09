@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/invite.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>challenge</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapperLeft">
+            <div id="logo">
+            <img src="/static/images/rook.svg" > <span id="logoTxt"> Tacticle Throne</span>
+            </div>
+            <div id="menu">
+                <h4>Menu</h4>
+                <ol>
+                     <a href="{% url 'userboard' %}"><li><i class='bx bxs-dashboard bx-flashing-hover'></i>Dashboard</li> </a>
+                    <li> <i class='bx bx-list-ol bx-tada-hover'></i>Leaderboard</li>
+                    <li> <i class='bx bx-message-dots bx-tada-hover'></i>Feedback</li>
+                    <a href="{% url 'settings' %}"><li> <i class='bx bx-cog bx-tada-hover'></i>Settings</li></a>
+                </ol>
+            </div>
+            <div id="btn">
+                <a href="{% url 'index' %}">Logout</a>
+            </div>
+            <div id="metadata">
+                <p>@ copyright 2023</p>
+            </div>
+        </div>
+
+        <div class="wrapperRight">
+            <div class="inviteContainer">
+                <form action="gamecode" method="POST">
+                    {% csrf_token %}
+                    <h2 style="margin-bottom: 20px;">Classical Chess Challenge</h2>
+                    <p>Challenge <strong>opponent</strong> to a chess dual and wage war with your coin?</p>
+                    <label for="code">Create game code</label>
+                    <input type="text" id="code" name="code">
+                    <button type="submit" onclick=info()>Send code</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function info(){
+        alert("Code has been sent to opponent, please wait for him/her to join. Check the game status on the right pane")
+    }
+</script>
+</html>

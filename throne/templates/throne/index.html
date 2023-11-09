@@ -1,0 +1,36 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <title>Throne</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="active">Home</a>
+        <a href="#">Overview</a>
+        <a href="{% url 'about' %}">About Us</a>
+    </header>
+    <div class="container">
+        <div class="wrapperLeft">
+            <div class="banner">
+            <h2>Join</h2>
+            <h1>Tacticle <br> Throne <br> Now</h1>
+            <p>And Wage War With Your Coin</p>
+            <div class="actionBtn">
+                <a href="{% url 'login' %}" class="active">Play</a>
+                <a href="{% url 'signup' %}">Sign Up</a>
+            </div>
+            </div>
+        </div>
+        <div class="wrapperRight">
+            <img src="/static/images/bot3.png" alt="botPic" class="bot">
+            <img src="/static/images/blob.png" alt="botPic" class="blob">
+            <img src="/static/images/blob2.png" alt="botPic" class="blob2">
+            <img src="/static/images/rook.svg" alt="rook" class="rook">
+        </div>
+
+    </div>
+</body>
+</html>

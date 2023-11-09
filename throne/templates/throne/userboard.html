@@ -1,0 +1,110 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/userboard.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Throne</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapperLeft">
+            <div id="logo">
+            <img src="/static/images/rook.svg" > <span id="logoTxt"> Tacticle Throne</span>
+            </div>
+            <div id="menu">
+                <h4>Menu</h4>
+                <ol>
+                    <li class="active"> <i class='bx bxs-dashboard bx-flashing-hover'></i>Dashboard</li>
+                    <li> <i class='bx bx-list-ol bx-tada-hover'></i>Leaderboard</li>
+                    <a href="{% url 'feedback' %}"><li><i class='bx bx-message-dots bx-tada-hover'></i>Feedback </li></a>
+                    <a href="{% url 'settings' %}"> <li> <i class='bx bx-cog bx-tada-hover'></i>Settings</li></a>
+                </ol>
+            </div>
+            <div id="btn">
+                <a href="{% url 'index' %}">Logout</a>
+            </div>
+            <div id="metadata">
+                <p>@ copyright 2023</p>
+            </div>
+        </div>
+
+        <div class="wrapperRight" >
+            <div class="dashboard">
+                <div id="header">
+                    <div>
+                    <h3>
+                    welcome back {{ name }}
+                    </h3>
+                    
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <p>
+                            {{ date.day }}-{{ date.month }}-{{ date.year}}
+                        </p>
+                    </div>
+
+                </div>
+                <div id="gameBlitz">
+                    <h4>Blitz</h4>
+                    <p>A very fast chess game with fast time control and is played under ten minutes</p>
+                    <button class="btn" disabled>Play</button>
+
+                    </div>
+                <div id="gameClassic">
+                    <h4>Classical</h4>
+                    <p>A chess game played at a slow time control, with games taking up to several hours</p>
+                    <a href="http://localhost:3037"><button class="btn">Play</button></a>
+                </div>
+                <div id="gameRapid">
+                    <h4>Rapid</h4>
+                    <p>A chess game where all the moves must be completed in a fixed time for each player</p>
+                    <button class="btn" disabled>Play</button>
+                </div>
+
+                <div id="stats">
+                    <h4>Stats</h4>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <p>Total Wins</p> <span>0</span>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <p>Total Lost</p> <span>0</span>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <p>Total Draws</p> <span>0</span>
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <p>Rank Position</p> <span>10/10</span>
+                    </div>
+                    <div>
+                        <img src="/static/images/bot3.png" alt="botPic" class="bot" style="width: 90px;
+                        transform: scaleX(-1) rotate(40deg);">
+                    </div>
+                </div>
+                <div id="players">
+                    <h4 style="text-align: center; margin-bottom: 10px;
+                     border-bottom: 1px solid black; padding-bottom: 10px;">Players</h4>
+                    <ol >
+                        {% for x in users %}
+                        <form action="invite" method="POST">
+                            {% csrf_token %}
+                        <li><i class='bx bx-user-circle'></i> <h5>{{ x.first_name}} {{x.last_name}}</h5> <button type="submit">Challenge</button></li>
+                        </form>
+                        {% endfor %}
+                    </ol>
+                </div>
+                <div id="footer">
+                    <div style="display: flex;">
+                        <p>Follow us | </p> 
+                        <span style="margin-left: 10px; cursor: pointer;">Twitter</span> 
+                        <span style="margin-left: 10px; cursor: pointer;">Instagram</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/settings.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Settings</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapperLeft">
+            <div id="logo">
+            <img src="/static/images/rook.svg" > <span id="logoTxt"> Tacticle Throne</span>
+            </div>
+            <div id="menu">
+                <h4>Menu</h4>
+                <ol>
+                     <a href="{% url 'userboard' %}"><li><i class='bx bxs-dashboard bx-flashing-hover'></i>Dashboard</li> </a>
+                    <li> <i class='bx bx-list-ol bx-tada-hover'></i>Leaderboard</li>
+                    <a href="{% url 'feedback' %}"><li> <i class='bx bx-message-dots bx-tada-hover'></i>Feedback</li></a>
+                    <li class="active"> <i class='bx bx-cog bx-tada-hover'></i>Settings</li>
+                </ol>
+            </div>
+            <div id="btn">
+                <a href="{% url 'index' %}">Logout</a>
+            </div>
+            <div id="metadata">
+                <p>@ copyright 2023</p>
+            </div>
+        </div>
+
+        <div class="wrapperRight">
+            <div class="settingContainer">
+                <div class="settingDash">
+                    <form action="update/{{email}}" method="POST">
+                        {% csrf_token %}
+                    <div class="row">
+                        <span>First Name</span> <input type="text" name="f_name" value="{{fName}}">
+                    </div>
+                    <div class="row">
+                        <span>Last Name</span> <input type="text" name="l_name" value="{{lName}}">
+                    </div>
+                    <div class="row">
+                        <span>E-mail</span> <input type="email" name="e_mail" value="{{email}}" disabled>
+                    </div>
+                    <div class="row">
+                        <span>Pnone No</span> <input type="number" name="p_no" value="{{phone}}">
+                    </div>
+                    <div class="row">
+                        <span>New Password</span> <input type="text" name="password" required>
+                    </div>
+                    <div class="row" style="display: flex; justify-content: center;">
+                        <button type="submit" >Update</button>
+                    </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

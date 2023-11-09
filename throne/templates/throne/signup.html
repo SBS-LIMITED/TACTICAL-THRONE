@@ -1,0 +1,60 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/signup.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Account</title>
+</head>
+<body>
+    <div class="container">
+        <div class="wrapperLeft">
+            <div class="banner">
+                <h1>Hi,</h1>
+                <p>Welcome To World of Games</p>
+                <img src="/static/images/bot3.png" alt="botPic" class="bot3">
+            </div>
+        </div>
+        <div class="wrapperRight">
+
+            <!-- sign up -->
+            <div class="accountSignup">
+                <form action="{% url 'signup' %}" method="POST">
+                    {% csrf_token %}
+                    <p id="header">Tacticle Throne</p>
+                    <br>
+                    <div class="row">
+                        <label for="f_name">First Name</label>
+                        <input type="text" name="f_name" required>
+                     </div>
+                     <div class="row">
+                        <label for="l_name">Last Name</label>
+                        <input type="text" name="l_name" required>
+                     </div>
+                    <div class="row">
+                    <label for="e_mail">E-mail</label>
+                    <input type="email" name="e_mail" required>
+                    </div>
+                    <div class="row">
+                        <label for="phone_no">Phone no</label>
+                        <input type="number" name="phone_no" required >
+                        </div>
+                    <div class="row">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" required>
+                    </div>
+                   
+                    <button type="submit" class="btn">Sign Up</button>
+                    <div class="metaData">
+                        <p>Have an account?... <a href="{% url 'login' %}">Login now</a></p>
+                        <p><a href="{% url 'index' %}" class="home">Home</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</html>
